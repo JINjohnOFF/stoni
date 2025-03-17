@@ -68,6 +68,11 @@
             }
             document.body.addEventListener('click', playBackgroundMusic, { once: true });
         });
+
+        window.addEventListener('beforeunload', function(event) {
+            event.preventDefault();
+            event.returnValue = 'У вас есть несохраненные изменения. Вы уверены, что хотите покинуть страницу?';
+        });
     </script>
 </body>
 </html>
